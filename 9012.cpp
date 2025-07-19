@@ -1,39 +1,41 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-bool solve(){
-    string s;
-    cin>>s;
-
-    vector<char> st;
-    for(char c : s){
-        if(c == '('){
-            st.push_back(c);
-        }
-        else{
-            if(st.empty()){
-                return false;
-            }
-            else{
-                st.pop_back();
-            }
-        }
-    }
-    return st.size() == 0;
-}
 
 int main(){
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+    stack<int> st;
     int rpt;
     cin>>rpt;
-    stack<char> st;
     for(int i=0;i<rpt;i++){
-        if(solve()){
-            cout<<"YES\n";
+        int first,second=-1;
+        cin>>first;
+        if(first==1){
+            cin>>second;
+            st.push(second);
         }
-        else{
-            cout<<"NO\n";
+        else if(first==2){
+            if(st.size() == 0) cout<<-1<<'\n';
+            else{
+                cout<<st.top()<<'\n';
+                st.pop();
+            }
+        }
+        else if(first==3){
+            cout<<st.size()<<'\n';
+        }
+        else if(first==4){
+            if(st.empty())cout<<1<<'\n';
+            else cout<<0<<'\n';
+        }
+        else if(first==5){
+            if(st.size() == 0) cout<<-1<<'\n';
+            else{
+                cout<<st.top()<<'\n';
+            }
         }
     }
-    
     return 0;
-} 
+}
