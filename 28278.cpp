@@ -8,9 +8,9 @@ int main(){
     cout.tie(NULL);
     stack<int> st;
     int rpt;
-    cin>>rpt;
-    for(int i=0;i<rpt;i++){
-        int first,second=-1;
+    cin>>rpt;{
+        int first,second=-
+    for(int i=0;i<rpt;i++)1;
         cin>>first;
         if(first==1){
             cin>>second;
