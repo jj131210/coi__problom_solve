@@ -1,20 +1,20 @@
-#include<iostream>
-#include<queue>
-using namespace std;
-long long int a,b,c;
-long long int reku(long long int k){
-    long long int r = reku(k/2);
-       if(k == 1){
-        return a%c;
-       }
-       if(k%2 == 0) return r*r%c;
-       else return (r*r) %c*a%c;
+#include <stdio.h>
 
+int A,B,C;
+
+long long int f(long long int y){
+	if(y==1) return A%C;
+	
+	long long int k = f(y/2)%C;
+	
+	if(y%2==0) return k*k%C;
+	else return k*k%C*A%C;
 }
 
-int main(void)
-{
-    cin>>a>>b>>c;
-    cout<<reku(b);
+int main(){
+	scanf("%d %d %d",&A,&B,&C);
+	
+	printf("%lld\n",f(B));
+	
 	return 0;
 }
