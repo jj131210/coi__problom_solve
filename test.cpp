@@ -9,6 +9,6 @@ int r(int n){
     return 0;
 }
 int main(){
-	r(5);
-    return 0;
+	int a;  
+    cin>>a;
 }
